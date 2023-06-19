@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock Paper Scissors</title>
+        <link type="text/css" rel="stylesheet" href="index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet" />
+    </head>
+
+    <body>
+        <main>
+            <h1>Rock Paper Scissors - Best of 5</h1>
+            <div>
+                <section class="player">
+                    <object class="rock_hand" data="./images/rock_hand.png"></object>
+                    <object class="paper_hand" data="./images/paper_hand.png"></object>
+                    <object class="scissor_hand" data="./images/scissor_hand.png"></object>
+                </section>
+
+                <section class="PC">
+                    <object class="rock_hand_PC" data="./images/rock_hand.png"></object>
+                    <object class="paper_hand_PC" data="./images/paper_hand.png"></object>
+                    <object class="scissor_hand_PC" data="./images/scissor_hand.png"></object>
+                </section>
+            </div>
+
+            <section class="buttons">
+                <button class="rock"><object data="./images/rock.png"></object></button>
+                <button class="paper"><object data="./images/paper.png"></object></button>
+                <button class="scissor"><object data="./images/scissor.png"></object></button>
+            </section>
+
+            <h3 class="info">Your Turn!</h3>
+            <h4 class="score">Score You: 0 | Computer: 0</h3>
+                <button class="reset">
+                    Try again
+                </button>
+        </main>
+    </body>
+
+    <script src="index.js"></script>
+
+</html>
