@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Exo 2";
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: #fdf4f5;
+}
+
+main {
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  overflow: hidden;
+
+  div {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+h1 {
+  color: #e8a0bf;
+}
+
+main .player {
+  object {
+    width: 8rem;
+  }
+
+  .rock_hand {
+    transition: 1s;
+    transform: rotateZ(90deg) translateY(100%);
+  }
+
+  .paper_hand {
+    transition: 1s;
+    transform: translateX(-210%);
+  }
+
+  .scissor_hand {
+    transition: 1s;
+    transform: translateX(-300%);
+  }
+}
+
+main .PC {
+  object {
+    width: 8rem;
+  }
+  .rock_hand_PC {
+    transition: 1s;
+    transform: rotateZ(-90deg) translateY(310%);
+  }
+
+  .paper_hand_PC {
+    transition: 1s;
+    transform: rotateY(180deg) translateX(-210%);
+  }
+
+  .scissor_hand_PC {
+    transition: 1s;
+    transform: rotateY(180deg) translateX(-100%);
+  }
+}
+
+main .buttons {
+  display: flex;
+  gap: 5rem;
+  object {
+    max-width: 4rem;
+    pointer-events: none;
+  }
+}
+
+main button {
+  background-color: unset;
+  border: unset;
+}
