@@ -7,17 +7,44 @@ let scissor_hand_player = document.getElementsByClassName("scissor_hand")[0];
 let rock_hand_PC = document.getElementsByClassName("rock_hand_PC")[0];
 let paper_hand_PC = document.getElementsByClassName("paper_hand_PC")[0];
 let scissor_hand_PC = document.getElementsByClassName("scissor_hand_PC")[0];
-console.log(rock_hand_PC, paper_hand_PC, scissor_hand_PC);
 let playerSelection = "";
 let score = { player: 0, computer: 0 };
 let computerSelection = getComputerChoice();
 let finished = false;
+let creditsDialog = document.getElementsByTagName("dialog")[0];
 
 document.addEventListener(
   "click",
   function (e) {
     if (e.target.tagName.toLowerCase() === "button") {
-      if (e.target.classList[0] !== "reset") {
+      if (e.target.className === "credits") {
+        if (
+          creditsDialog.style.display === "none" ||
+          creditsDialog.style.display === ""
+        ) {
+          creditsDialog.style.display = "flex";
+        } else {
+          creditsDialog.style.display = "none";
+        }
+        creditsDialog.open = !creditsDialog.open;
+        console.log(creditsDialog.open);
+      } else if (e.target.className === "closeCredits") {
+        creditsDialog.style.display = "none";
+        creditsDialog.open = false;
+      } else if (e.target.classList[0] === "reset") {
+        rock_hand_PC.style.transform = "rotateZ(-90deg) translateY(310%)";
+        paper_hand_PC.style.transform = "rotateY(180deg) translateX(-210%)";
+        scissor_hand_PC.style.transform = "rotateY(180deg) translateX(-100%)";
+
+        rock_hand_player.style.transform = "rotateZ(90deg) translateY(100%)";
+        paper_hand_player.style.transform = "translateX(-210%)";
+        scissor_hand_player.style.transform = "translateX(-300%)";
+        score["computer"] = 0;
+        score["player"] = 0;
+        finished = false;
+        scoreInner.innerHTML = `Score You: ${score["player"]} | Computer: ${score["computer"]}`;
+        infoInner.innerHTML = "Your Turn!";
+      } else {
         computerSelection = getComputerChoice();
         playerSelection = e.target.classList[0];
         if (!finished) {
@@ -58,19 +85,6 @@ document.addEventListener(
           }
         }
         resetWinner();
-      } else {
-        rock_hand_PC.style.transform = "rotateZ(-90deg) translateY(310%)";
-        paper_hand_PC.style.transform = "rotateY(180deg) translateX(-210%)";
-        scissor_hand_PC.style.transform = "rotateY(180deg) translateX(-100%)";
-
-        rock_hand_player.style.transform = "rotateZ(90deg) translateY(100%)";
-        paper_hand_player.style.transform = "translateX(-210%)";
-        scissor_hand_player.style.transform = "translateX(-300%)";
-        score["computer"] = 0;
-        score["player"] = 0;
-        finished = false;
-        scoreInner.innerHTML = `Score You: ${score["player"]} | Computer: ${score["computer"]}`;
-        infoInner.innerHTML = "Your Turn!";
       }
     }
   },

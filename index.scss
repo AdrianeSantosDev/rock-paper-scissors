@@ -89,3 +89,51 @@ main button {
   background-color: unset;
   border: unset;
 }
+
+dialog {
+  top: 0.5%;
+  left: 1%;
+  width: 23rem;
+  height: 20rem;
+  display: none;
+  justify-content: center;
+  align-content: ce;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  z-index: 3;
+  border-radius: 15px;
+  padding: 1rem;
+  article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    a {
+      &:hover {
+        transition: 0.3s;
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+dialog a {
+  color: var(--dark-blue);
+}
+
+dialog .closeIcon {
+  width: 20px;
+}
+
+.closeCredits {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+a {
+  text-decoration: none;
+}
